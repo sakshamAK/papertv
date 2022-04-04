@@ -1,0 +1,25 @@
+.sideContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--dark-secondary);
+    color: var(--inactive-font);
+}
+
+.sideContainer li {
+    list-style-type: none;
+}
+
+.listItems {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    color: var(--inactive-font);
+    text-decoration: none;
+}
+
+.active {
+    color: var(--active-font);
+    background: transparent;
+}
