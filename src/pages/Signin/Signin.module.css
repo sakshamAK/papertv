@@ -49,3 +49,16 @@
     font-family: 'Work Sans', sans-serif;
     cursor: pointer;
 }
+
+.passwordVisibility {
+    position: absolute;
+    right: 8rem;
+    top: 2.7rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--dark-primary);
+}
+
+.passVis {
+    position: relative;
+}
