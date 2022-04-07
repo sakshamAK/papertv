@@ -54,7 +54,7 @@ export const addVideoToWatchLaterHandler = function (schema, request) {
       );
     }
     const { video } = JSON.parse(request.requestBody);
-    if (user.watchLater.some((item) => item.id === video.id)) {
+    if (user.watchLater.some((item) => item._id === video._id)) {
       return new Response(
         409,
         {},

@@ -1,13 +1,15 @@
 import React from 'react'
 import { VideoThumbnail } from '../../components'
-import { useWatchLater } from '../../contexts'
+import { useWatchLaterAndLikes } from '../../contexts'
 
 export const WatchLater = () => {
-  const { watchLaterVideos } = useWatchLater()
+  const { state: { watchLater } } = useWatchLaterAndLikes()
   return (
     <div className="videoListing">
       <h1>Watch Later</h1>
-      {watchLaterVideos?.map(({ _id, category, views, title, creator, thumbnail }) => (<VideoThumbnail _id={_id} category={category} views={views} title={title} creator={creator} thumbnail={thumbnail} />))}
+      <div className="videoContainer" >
+        {watchLater?.map(video => (<VideoThumbnail video={video} />))}
+      </div>
     </div>
   )
 }

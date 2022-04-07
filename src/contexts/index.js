@@ -1,4 +1,4 @@
 export { AuthProvider, useAuth } from "./AuthContext/AuthContext";
-export { useWatchLater, WatchLaterProvider } from "./WatchLaterContext/WatchLaterContext";
+export { useWatchLaterAndLikes, WatchLaterAndLikesProvider } from "./WatchLaterAndLikesContext/WatchLaterAndLikesContext";
 export { VideoDataProvider, useVideoData } from "./videoDataContext/VideoDataContext";
 

@@ -5,6 +5,8 @@ import { Explore, History, Home, Playlist, ProductCategories, Trending, WatchLat
 import Mockman from "mockman-js"
 import { LikedVideos } from "./pages/LikedVideos/LikedVideos";
 import { PrivateRoute } from "./PrivateRoute";
+import { VideoPlayer } from "./components/VideoPlayerSPA/VideoPlayer";
+import { SinglePlaylist } from "./pages/SinglePlaylist/SinglePlaylist";
 
 function App() {
   return (
@@ -19,12 +21,14 @@ function App() {
           <Route path="/explore" element={<Explore />} />
           <Route path="/trending" element={<Trending />} />
           <Route path="/:categoryName" element={<ProductCategories />} />
+          <Route path="/video/:id" element={<VideoPlayer />} />
           <Route path="/mockman" element={<Mockman />} />
 
           <Route element={<PrivateRoute />}>
             <Route path="/history" element={<History />} />
             <Route path="/watch-later" element={<WatchLater />} />
             <Route path="/playlists" element={<Playlist />} />
+            <Route path="/playlist/:id" element={<SinglePlaylist />} />
             <Route path="/liked-videos" element={<LikedVideos />} />
           </Route>
         </Routes>

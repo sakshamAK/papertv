@@ -26,8 +26,8 @@ const AuthProvider = ({ children }) => {
             setAuth(true)
             navigate("/");
         }
-        catch (e) {
-            console.log(e)
+        catch (err) {
+            console.error(err)
             setAuth(false)
         }
     }

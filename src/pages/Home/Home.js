@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { CoverContent, VideoThumbnail } from '../../components';
+import { CoverContent } from '../../components';
 import { useVideoData } from '../../contexts';
 import styles from "./Home.module.css"
 
@@ -14,7 +14,7 @@ export const Home = () => {
             <div className="videoListing">
                 <h1 className={`${styles.heading}`} >Categories</h1>
                 <div className="videoContainer">
-                    {categoryData.map(({ _id, thumbnail, category, title, views, creator }) => (
+                    {categoryData.map(({ _id, thumbnail, category, title }) => (
                         <Link className={`${styles.productLink}`} to={`/${category}`} key={_id}>
                             <div className={`${styles.thumbnailContainer}`}>
                                 <img className="img-resp" src={thumbnail} alt={category} title={title} />

@@ -1,0 +1,19 @@
+.removeCard div:first-child {
+  width: 100%;
+  text-align: right;
+}
+
+.removeCard i {
+  cursor: pointer;
+}
+
+
+.clearAll {
+    color: var(--active-font);
+    background-color: var(--dark-secondary);
+}
+
+.historyLabel {
+    display: flex;
+    justify-content: space-between;
+}

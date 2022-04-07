@@ -8,8 +8,8 @@ export const Trending = () => {
         <div className="videoListing">
             <h1>Trending Videos</h1>
             <div className="videoContainer">
-                {videoData.map(({ _id, thumbnail, category, title, views, creator }) => (
-                    <VideoThumbnail _id={_id} thumbnail={thumbnail} category={category} title={title} views={views} creator={creator} />
+                {videoData.map(video => (
+                    <VideoThumbnail video = {video} />
                 ))}
             </div>
         </div>

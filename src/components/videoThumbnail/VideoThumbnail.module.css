@@ -6,6 +6,7 @@
     position: relative;
     cursor: pointer;
     color: var(--primary-font);
+    text-decoration: none;
 }
 
 .productLink {
@@ -17,14 +18,19 @@
     font-size: 0.8rem;
 }
 
-.watchList {
-    background-color: var(--dark-primary);
-    color: var(--active-font);
-    padding: 0.2rem;
-    border-radius: 0 0 0 1rem;
-    cursor: pointer;
-    border: none;
+.shortcutIconsContainer {
     position: absolute;
+    border-radius: 0 0 0 1rem;
+    background-color: var(--dark-primary);
     top: 0;
     right: 0;
+    display: flex;
+}
+
+.shortcutIcons{
+    color: var(--active-font);
+    background-color: transparent;
+    padding: 0.4rem;
+    cursor: pointer;
+    border: none;
 }

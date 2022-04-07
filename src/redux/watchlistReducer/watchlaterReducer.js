@@ -1,10 +1,37 @@
-import { ADD_TO_WATCHLATER } from "./action-types"
+import { ADD_TO_HISTORY, ADD_TO_LIKED_VIDEOS, ADD_TO_PLAYLIST, ADD_TO_WATCHLATER, REMOVE_FROM_HISTORY, REMOVE_FROM_LIKED_VIDEOS, REMOVE_FROM_PLAYLIST, REMOVE_FROM_WATCHLATER } from "./action-types"
 
 export const watchlaterReducer = (state, { type, payload }) => {
-    switch(type) {
+    switch (type) {
         case ADD_TO_WATCHLATER: {
-            console.log(payload)
+            return { ...state, watchLater: payload.watchLater };
         }
 
+        case REMOVE_FROM_WATCHLATER: {
+            return { ...state, watchLater: payload.watchLater };
+        }
+
+        case ADD_TO_LIKED_VIDEOS: {
+            return { ...state, likes: payload.likes };
+        }
+
+        case REMOVE_FROM_LIKED_VIDEOS: {
+            return { ...state, likes: payload.likes };
+        }
+
+        case ADD_TO_PLAYLIST: {
+            return { ...state, playlists: payload.playlists };
+        }
+
+        case REMOVE_FROM_PLAYLIST: {
+            return { ...state, playlists: payload.playlists };
+        }
+
+        case ADD_TO_HISTORY: {
+            return { ...state, history: payload.history };
+        }
+
+        case REMOVE_FROM_HISTORY: {
+            return { ...state, history: payload.history };
+        }
     }
 }

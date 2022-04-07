@@ -39,3 +39,17 @@ body {
   flex-wrap: wrap;
   padding: 2rem 0;
 }
+
+.listItems {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  color: var(--inactive-font);
+  text-decoration: none;
+}
+
+.active {
+  color: var(--active-font);
+  background: transparent;
+}
