@@ -62,3 +62,25 @@
 .passVis {
     position: relative;
 }
+
+@media screen and (max-width: 880px) {
+    .heading {
+        background: transparent;
+        text-align: center;
+    }
+
+    .signInContainer input {
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        margin: 0.6rem clamp(0rem, 6vw, 6rem);
+    }
+
+    .signInContainer label, .forgotPassword {
+        margin: 0.6rem clamp(0rem, 6vw, 6rem);
+    }
+
+    .passwordVisibility {
+        top: 3.3rem;
+        right: 4rem;
+    }
+}

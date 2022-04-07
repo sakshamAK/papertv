@@ -1,10 +1,10 @@
 :root {
   --active-font: #f3f3f3;
-  --inactive-font: #7E7F7F;
+  --inactive-font: #7e7f7f;
   --primary-font: #e7e7e7;
-  --cta-primary: #FE2A6E;
-  --cta-secondary: #509ECF;
-  --dark-primary: #0C0D11;
+  --cta-primary: #fe2a6e;
+  --cta-secondary: #509ecf;
+  --dark-primary: #0c0d11;
   --dark-secondary: #000101;
   --dark-menu: #202027;
 }
@@ -16,11 +16,9 @@ body {
 
 .gridContent {
   display: grid;
-    grid-template-columns: max-content 4fr;
-    min-height: 100vh;
-    grid-template-areas: 
-    "side body"
-    ;
+  grid-template-columns: max-content 4fr;
+  min-height: 100vh;
+  grid-template-areas: "side body";
 }
 
 .sideNav {
@@ -52,4 +50,15 @@ body {
 .active {
   color: var(--active-font);
   background: transparent;
+}
+
+@media screen and (max-width: 630px) {
+  .gridContent {
+    grid-template-columns: 1fr;
+    grid-template-areas: "body";
+  }
+
+  .sideNav {
+    display: none;
+  }
 }
