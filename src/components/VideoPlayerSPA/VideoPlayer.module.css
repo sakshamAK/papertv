@@ -110,3 +110,21 @@
 .createdPlaylists li:hover {
   background-color: var(--dark-secondary);
 }
+
+@media screen and (max-width: 1350px) {
+  .SPVideogrid {
+    grid-template-columns: 1fr;
+    padding-right: 2rem;
+    grid-template-areas:
+      "video"
+      "buttons"
+      "infiniteScroll";
+  }
+
+  .actionButtons h2 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+  .sideListCard {
+    align-items: flex-start;
+  }
+}

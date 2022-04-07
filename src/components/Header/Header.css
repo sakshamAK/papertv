@@ -3,7 +3,7 @@
     width: 100vw;
     padding-left: 0;
     color: var(--active-font);
-    z-index: 1;
+    z-index: 4;
 }
 
 .menu-list-items:hover {
@@ -24,4 +24,15 @@
 .Link-color {
     color: var(--inactive-font);
     cursor: pointer;
+}
+
+@media screen and (max-width: 630px) {
+    .brand-name {
+        background-color: transparent;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        padding-left: clamp(2rem, 6vw, 4rem);
+    }
+    .menu-list-items {
+        padding: clamp(0.4rem, 3vw, 1rem);
+    }
 }

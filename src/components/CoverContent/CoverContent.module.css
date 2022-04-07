@@ -19,11 +19,11 @@
 .heading h1 {
     font-family: 'Work Sans', sans-serif;   
     text-decoration: underline;
-    font-size: 3rem;
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
 .heading p {
-    width: 27rem;
+    width: clamp(20rem, 30vw, 27rem);
 }
 
 .heading button {
@@ -32,8 +32,18 @@
     color: var(inactive-font);
     font-family: 'Work Sans', sans-serif;  
     font-weight: 500; 
+    font-size: clamp(0.5rem, 1.5vw ,1rem);
 }
 
 .heading button:hover {
     color: var(--active-font);
+}
+
+@media screen and (max-width: 930px) {
+    .heading {
+        display: none;
+    }
+    .coverimg {
+        display: none;
+    }
 }

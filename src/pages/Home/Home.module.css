@@ -11,7 +11,7 @@
     background: linear-gradient(to right, var(--dark-primary), var(--cta-primary));
     height: 5px;
     border-radius: 99px;
-    width: 10rem;
+    width: clamp(6rem, 15vw, 10rem);
 } 
 .thumbnailContainer {
     display: flex;
