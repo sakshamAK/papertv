@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useWatchLaterAndLikes } from "../../contexts";
+import { useFeatures } from "../../contexts";
 import styles from "./VideoThumbnail.module.css";
 
 export const VideoThumbnail = ({ video }) => {
@@ -14,11 +14,15 @@ export const VideoThumbnail = ({ video }) => {
     creator = "",
   } = video;
   const { toggleWatchLaterVideo, state, addToLikedVideos, addToHistory } =
-    useWatchLaterAndLikes();
+    useFeatures();
 
   return (
     <div className={`${styles.thumbnailContainer}`} key={_id}>
-      <Link to={`/video/${id}`} className={`${styles.thumbnailContainer}`} onClick = {() => addToHistory(video)}>
+      <Link
+        to={`/video/${id}`}
+        className={`${styles.thumbnailContainer}`}
+        onClick={() => addToHistory(video)}
+      >
         <img
           className="img-resp"
           src={thumbnail}

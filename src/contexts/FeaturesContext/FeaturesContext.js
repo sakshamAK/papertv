@@ -7,7 +7,7 @@ import {
 } from "react";
 import { useAuth } from "../AuthContext/AuthContext";
 import axios from "axios";
-import { watchlaterReducer } from "../../redux";
+import { featuresReducer } from "../../redux";
 import {
   ADD_TO_WATCHLATER,
   REMOVE_FROM_WATCHLATER,
@@ -17,12 +17,14 @@ import {
   REMOVE_FROM_PLAYLIST,
   ADD_TO_HISTORY,
   REMOVE_FROM_HISTORY,
+  ADD_VIDEO_TO_PLAYLIST,
+  REMOVE_VIDEO_FROM_PLAYLIST,
 } from "../../redux/watchlistReducer/action-types";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const WatchLaterAndLikesContext = createContext(null);
 
-const useWatchLaterAndLikes = () => useContext(WatchLaterAndLikesContext);
+const useFeatures = () => useContext(WatchLaterAndLikesContext);
 
 const initState = {
   watchLater: [],
@@ -31,8 +33,8 @@ const initState = {
   history: [],
 };
 
-const WatchLaterAndLikesProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(watchlaterReducer, initState);
+const FeaturesProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(featuresReducer, initState);
   const { token } = useAuth();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -123,19 +125,45 @@ const WatchLaterAndLikesProvider = ({ children }) => {
     }
   };
 
-  const addVideoToPlaylist = async (playlist) => {
+  const addVideoToPlaylist = async (playlistId, video) => {
     if (token) {
       try {
         const {
-          data: { playlists },
-        } = await axios.post(`/api/user/playlists/${playlist}`, {
-          headers: { authorization: token },
-        });
-
+          data: { playlist },
+        } = await axios.post(
+          `/api/user/playlists/${playlistId}`,
+          { video },
+          {
+            headers: { authorization: token },
+          }
+        );
         dispatch({
-          type: REMOVE_FROM_HISTORY,
-          payload: { history },
+          type: ADD_VIDEO_TO_PLAYLIST,
+          payload: { playlist, playlistId },
         });
+        console.log(playlist);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  };
+
+  const removeVideoFromPlaylist = async (playlistId, videoId) => {
+    if (token) {
+      try {
+        const {
+          data: { playlist },
+        } = await axios.delete(
+          `/api/user/playlists/${playlistId}/${videoId}`,
+          {
+            headers: { authorization: token },
+          }
+        );
+        dispatch({
+          type: REMOVE_VIDEO_FROM_PLAYLIST,
+          payload: { playlist, playlistId },
+        });
+        // console.log(playlist, video);
       } catch (err) {
         console.error(err);
       }
@@ -279,6 +307,7 @@ const WatchLaterAndLikesProvider = ({ children }) => {
         removeFromHistory,
         clearHistory,
         addVideoToPlaylist,
+        removeVideoFromPlaylist,
       }}
     >
       {children}
@@ -286,4 +315,4 @@ const WatchLaterAndLikesProvider = ({ children }) => {
   );
 };
 
-export { useWatchLaterAndLikes, WatchLaterAndLikesProvider };
+export { useFeatures, FeaturesProvider };
