@@ -1,0 +1,27 @@
+.nav-header {
+    background-color: var(--dark-menu);
+    width: 100vw;
+    padding-left: 0;
+    color: var(--active-font);
+    z-index: 1;
+}
+
+.menu-list-items:hover {
+    background-color: transparent;
+}
+
+.menu-list-items:hover .Link-color {
+    color: var(--active-font);
+}
+
+.brand-name{
+    padding: 0.8rem 4rem;
+    background-color: var(--cta-primary);
+    font-weight: 700;
+    color: var(--active-font);
+}
+
+.Link-color {
+    color: var(--inactive-font);
+    cursor: pointer;
+}

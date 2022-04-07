@@ -1,51 +1,55 @@
-.App {
-  text-align: center;
+:root {
+  --active-font: #f3f3f3;
+  --inactive-font: #7E7F7F;
+  --primary-font: #e7e7e7;
+  --cta-primary: #FE2A6E;
+  --cta-secondary: #509ECF;
+  --dark-primary: #0C0D11;
+  --dark-secondary: #000101;
+  --dark-menu: #202027;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--dark-primary);
+  color: var(--primary-font);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gridContent {
+  display: grid;
+    grid-template-columns: max-content 4fr;
+    min-height: 100vh;
+    grid-template-areas: 
+    "side body"
+    ;
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+.sideNav {
+  grid-area: side;
+  padding: 1rem 3rem;
+}
+
+.videoListing {
+  grid-area: body;
+  padding: 1rem 3rem;
+}
+
+.videoContainer {
   display: flex;
-  flex-direction: column;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.listItems {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
+  gap: 1rem;
+  cursor: pointer;
+  color: var(--inactive-font);
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
-  display: flex;
-}
-
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+.active {
+  color: var(--active-font);
+  background: transparent;
 }
