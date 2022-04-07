@@ -1,8 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Footer, Header, SideBar } from "./components";
-import { Explore, History, Home, Playlist, ProductCategories, Trending, WatchLater, Signin, Signup } from "./pages";
-import Mockman from "mockman-js"
+import {
+  Explore,
+  History,
+  Home,
+  Playlist,
+  ProductCategories,
+  Trending,
+  WatchLater,
+  Signin,
+  Signup,
+} from "./pages";
+import Mockman from "mockman-js";
 import { LikedVideos } from "./pages/LikedVideos/LikedVideos";
 import { PrivateRoute } from "./PrivateRoute";
 import { VideoPlayer } from "./components/VideoPlayerSPA/VideoPlayer";

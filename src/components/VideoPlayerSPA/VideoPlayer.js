@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { useAuth, useVideoData, useWatchLaterAndLikes } from "../../contexts";
+import { useAuth, useVideoData, useFeatures } from "../../contexts";
 import styles from "./VideoPlayer.module.css";
 
 export const VideoPlayer = () => {
@@ -16,7 +16,8 @@ export const VideoPlayer = () => {
     description,
     setTitle,
     setDescription,
-  } = useWatchLaterAndLikes();
+    addVideoToPlaylist,
+  } = useFeatures();
   const { isAuth } = useAuth();
   const videoItem = videoData?.find((video) => video.id === id);
   const [showPlaylist, setPlaylistMode] = useState(false);
@@ -86,11 +87,14 @@ export const VideoPlayer = () => {
             <hr />
             <ul className={`${styles.createdPlaylists}`}>
               {state?.playlists.map((playlist) => (
-                <li>
-                  {playlist.title}
+                <li onClick={() => addVideoToPlaylist(playlist._id, videoItem)}>
+                  <p>{playlist.title}</p>
                   <i
                     className="material-icons"
-                    onClick={() => removeFromPlaylist(playlist._id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeFromPlaylist(playlist._id);
+                    }}
                   >
                     close
                   </i>

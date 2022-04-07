@@ -1,1 +1,1 @@
-export { watchlaterReducer } from "./watchlistReducer/watchlaterReducer";
+export { featuresReducer } from "./watchlistReducer/featuresReducer";
