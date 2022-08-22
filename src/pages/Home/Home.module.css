@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 17rem;
     position: relative;
     cursor: pointer;
     color: var(--primary-font);
@@ -26,6 +25,11 @@
 .productLink {
     color: var(--primary-font);
     text-decoration: none;
+    
+}
+
+.thumbnailContainer {
+    width: clamp(10rem, 27vw, 17rem);
 }
 
 .thumbnailContainer div p {
@@ -42,4 +46,39 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.categTitle {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.categTitle img {
+    border-radius: 99rem;
+    margin-right: 1rem;
+}
+
+/* MEDIA QUERIES */
+
+
+@media screen and (max-width: 851px) {
+    .thumbnailContainer, .productLink {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .productLink img ~ h4 {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    .heading {
+        display: none;
+    }
+
+    .categTitle img {
+        margin: 0 0 0 1rem;
+    }
 }

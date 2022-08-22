@@ -33,7 +33,7 @@ body {
 
 .videoContainer {
   display: flex;
-  gap: 3rem;
+  gap: clamp(2rem, 4vw, 3rem);
   flex-wrap: wrap;
   padding: 2rem 0;
 }
@@ -50,6 +50,22 @@ body {
 .active {
   color: var(--active-font);
   background: transparent;
+}
+
+@media screen and (max-width: 860px) {
+  .videoContainer {
+    flex-direction: column;
+    
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .videoListing {
+    padding: 0;
+  }
+  .videoContainer {
+    padding-top: 0;
+  }
 }
 
 @media screen and (max-width: 630px) {

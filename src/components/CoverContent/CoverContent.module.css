@@ -40,9 +40,6 @@
 }
 
 @media screen and (max-width: 930px) {
-    .heading {
-        display: none;
-    }
     .coverimg {
         display: none;
     }
