@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 17rem;
+    width: clamp(10rem, 27vw, 17rem);
     position: relative;
     cursor: pointer;
     color: var(--primary-font);
@@ -33,4 +33,33 @@
     padding: 0.4rem;
     cursor: pointer;
     border: none;
+}
+
+.description {
+    margin-left: 0;
+}
+
+.categTitle {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.categTitle img {
+    border-radius: 99rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 851px) {
+    .thumbnailContainer {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .description {
+        margin-left: 1rem;
+    }
+    
 }

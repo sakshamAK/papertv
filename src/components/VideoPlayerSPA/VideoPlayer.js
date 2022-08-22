@@ -32,7 +32,8 @@ export const VideoPlayer = () => {
         allow="autoplay"
       ></iframe>
       <div className={`${styles.actionButtons}`}>
-        <h2>{videoItem.title}</h2>
+        <img src = "https://picsum.photos/40/40" />
+        <h4>{videoItem.title}</h4>
         <div className={`${styles.actionIcons}`}>
           <i
             className="material-icons"
@@ -105,17 +106,18 @@ export const VideoPlayer = () => {
         )}
       </div>
       <aside className={`${styles.sideList}`}>
+        <h3>More Videos: </h3>
         {videoData.map((videoElement) => (
           <div key={videoElement.id} className={`${styles.sideListCard} card`}>
-            <div className="horiz">
+            <div className={`${styles.sideListItem} horiz`}>
               <img
                 className={`${styles.horizImg}`}
                 src={videoElement.thumbnail}
                 alt={videoElement.category}
               />
               <div className={`${styles.vertText} vert-txt`}>
-                <h4>{videoElement.title}</h4>
-                <h5> {videoElement.creator}</h5>
+                <h5>{videoElement.title}</h5>
+                <p> {videoElement.creator}</p>
               </div>
             </div>
           </div>

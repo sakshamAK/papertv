@@ -26,15 +26,18 @@
 
 @media screen and (max-width: 630px) {  
     .sideContainer {
-      /* display: none; */
-      background-color: transparent;
+      flex-direction: row;
       position: fixed;
-      height: 100%;
-      width: 2.5rem;
-      padding: 5rem 0.5rem;
-      top: 5rem;
+      width: 100%;
+      justify-content: space-around;
+      padding: 1rem;
+      bottom: 0;
       z-index: 1;
       overflow: hidden;
+    }
+
+    .sideContainer li a h3 {
+        display: none;
     }
   }
   

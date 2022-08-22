@@ -52,10 +52,11 @@ body {
   background: transparent;
 }
 
+
 @media screen and (max-width: 860px) {
   .videoContainer {
     flex-direction: column;
-    
+
   }
 }
 
@@ -63,6 +64,11 @@ body {
   .videoListing {
     padding: 0;
   }
+
+  .videoListing h1 {
+    display: none;
+  }
+
   .videoContainer {
     padding-top: 0;
   }

@@ -29,15 +29,24 @@ export const VideoThumbnail = ({ video }) => {
           alt={category}
           title={title}
         />
-        <h4>{title}</h4>
-        {category !== "" ? <h4>{category}</h4> : ""}
-        {views !== "" ? (
-          <p>
-            {views} views | {creator}
-          </p>
-        ) : (
-          ""
-        )}
+        <div className={`${styles.description}`}>
+          <div className={`${styles.categTitle}`}>
+            <img src="https://picsum.photos/40/40" />
+            <div>
+              <h4>{title}</h4>
+              <div>
+                {category !== "" ? <h4>{category}</h4> : ""}
+                {views !== "" ? (
+                  <p>
+                    {views} views | {creator}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
       </Link>
       <div className={`${styles.shortcutIconsContainer}`}>
         <button

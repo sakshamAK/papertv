@@ -19,13 +19,8 @@ a {
 
 @media screen and (max-width: 630px) {
     .flexCont {
-        padding: 1rem 2rem;
-    }
-    .flexCont h2 {
-        font-size: clamp(1rem, 4vw, 1.5rem);
-    }
-
-    .flexCont p {
-        display: none;
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
     }
 }
